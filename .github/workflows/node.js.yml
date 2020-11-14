@@ -21,7 +21,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build docker file and push
         run: |
-          docker build -t "rkakumar85/movie-app-automated:client" ./client/
-          docker build -t "rkakumar85/movie-app-automated:server" ./server/
-          docker push rkakumar85/movie-app-automated
+          cd client
+          dir
      
