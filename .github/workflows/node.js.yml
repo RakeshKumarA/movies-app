@@ -17,14 +17,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}  
-      - name: Change directory to client
-        run: cd client
+      - run: cd client
       - name: create client docker image
         run: docker build -t "rkakumar85/movie-app-automated:"react-app"
-      - name: Change directory
-        run: cd..
+      - run: cd..
+      - run: cd server
       - name: Change to Server Directory and create docker image
-        working-directory: ./server
         run: docker build -t "rkakumar85/movie-app-automated:"api-server"
-      - name: Get to root server
+      - run: cd..
+      - name: Push to Dockerr hub
         run: docker push rkakumar85/movie-app-automated
