@@ -19,8 +19,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - run: npm --version
       - name: run docker
-        run: docker build -t "rkakumar85/movie-app-automated:"api-server"
+        run: docker build -t "rkakumar85/movie-app-automated:"react-app"
       - name: Push to Dockerr hub
         run: docker push rkakumar85/movie-app-automated
