@@ -55,7 +55,7 @@ jobs:
           --tag "gcr.io/$PROJECT_ID/server" ./server/
 
     # Push the Docker image to Google Container Registry
-    - name: Publish
+    - name: Publish to Google Registry
       run: |-
         docker push "gcr.io/$PROJECT_ID/client"
         docker push "gcr.io/$PROJECT_ID/server"
