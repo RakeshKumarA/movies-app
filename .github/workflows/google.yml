@@ -59,3 +59,11 @@ jobs:
       run: |-
         docker push "gcr.io/$PROJECT_ID/client"
         docker push "gcr.io/$PROJECT_ID/server"
+    - name: Build, Push and Deploy service to Google Cloud Run
+      uses: ThomFree/action-build-cloud-run@1.1
+      with:
+        image: "gcr.io/$PROJECT_ID/client"
+        service: "client"
+        project: ${{ secrets.GKE_PROJECT }}
+        region: europe-west2
+        service key: ${{ secrets.GCLOUD_AUTH }}
