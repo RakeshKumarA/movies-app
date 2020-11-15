@@ -50,9 +50,9 @@ jobs:
     - name: Build
       run: |-
         docker build \
-          --tag "client" ./client/
+          --tag "gcr.io/$PROJECT_ID/client" ./client/
         docker build \
-          --tag "server" ./server/
+          --tag "gcr.io/$PROJECT_ID/server" ./server/
 
     # Push the Docker image to Google Container Registry
     - name: Publish
